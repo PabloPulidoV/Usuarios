@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Buscar</title>
+</head>
+<body>
+{% if errors %}
+	<ul>
+	{% for error in errors %}
+		<li>{{ error }}</li>
+	{% endfor %}
+	</ul>
+{% endif %}
+	<h1>Sign In</h1>
+	<p>Llena los campos para registrarte</p>
+	<form action = "/send/" method = "post">{% csrf_token %}
+		<p> Codigo:     <input type = "text" name = "codigo"><p>
+		<p> Nombre:     <input type = "text" name = "nombre"><p>
+		<p> Edad:       <input type = "text" name = "edad"><p>
+		<p> Contrasena: <input type = "text" name = "pass"><p>
+		<p> Correo:     <input type = "text" name = "correo"><p>
+		<p> Pagina Web: <input type = "text" name = "wp"><p>	
+		
+		<input type = "submit" value = "Enviar">
+	</form>
+</body>
+</html>
